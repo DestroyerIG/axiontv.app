@@ -1,0 +1,11 @@
+android {
+    defaultConfig {
+        applicationId "com.axion.tv"
+        versionCode 1
+        versionName "1.0.0"
+        manifestPlaceholders += [
+            appName: "Axion TV",
+            tvBanner: "@drawable/axion_tv_banner"
+        ]
+    }
+}
