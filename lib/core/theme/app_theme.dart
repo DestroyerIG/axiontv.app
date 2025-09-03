@@ -60,7 +60,7 @@ class AppTheme {
           vertical: AppConstants.smallPadding,
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: 4,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppConstants.borderRadius),
@@ -136,7 +136,7 @@ class AppTheme {
         fillColor: AppConstants.surfaceColor,
         filled: true,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppConstants.surfaceColor,
         elevation: 4,
         shape: RoundedRectangleBorder(

@@ -46,9 +46,9 @@ final routerProvider = Provider<GoRouter>((ref) {
             path: 'player',
             name: 'player',
             builder: (context, state) {
-              final channelId = state.queryParameters['channelId'];
-              final channelName = state.queryParameters['channelName'];
-              final streamUrl = state.queryParameters['streamUrl'];
+              final channelId = state.uri.queryParameters['channelId'];
+              final channelName = state.uri.queryParameters['channelName'];
+              final streamUrl = state.uri.queryParameters['streamUrl'];
               
               return PlayerScreen(
                 channelId: channelId ?? '',

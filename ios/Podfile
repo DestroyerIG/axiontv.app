@@ -1,0 +1,17 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+
+platform :ios, '12.4'
+
+target 'AxionTV' do
+  use_react_native!(
+    :path => '../node_modules/react-native'
+  )
+
+  target 'AxionTVTests' do
+    inherit! :complete
+  end
+
+  post_install do |installer|
+    react_native_post_install(installer)
+  end
+end

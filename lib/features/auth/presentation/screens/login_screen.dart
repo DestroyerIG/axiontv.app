@@ -194,7 +194,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       if (value == null || value.isEmpty) {
                         return 'URL da playlist é obrigatória';
                       }
-                      if (!Uri.tryParse(value)?.hasAbsolutePath ?? false) {
+                      final uri = Uri.tryParse(value);
+                      if (uri == null || !uri.hasAbsolutePath) {
                         return 'URL inválida';
                       }
                       return null;

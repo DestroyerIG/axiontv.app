@@ -355,11 +355,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     return GestureDetector(
       onTap: () {
         // Navegar para o player
-        context.go('/home/player', queryParameters: {
-          'channelId': channel.id,
-          'channelName': channel.name,
-          'streamUrl': channel.streamUrl,
-        });
+        context.go('/home/player?channelId=${channel.id}&channelName=${channel.name}&streamUrl=${channel.streamUrl}');
       },
       child: Container(
         decoration: BoxDecoration(
@@ -591,11 +587,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           ),
           onTap: () {
             // Navegar para o canal
-            context.go('/home/player', queryParameters: {
-              'channelId': item.channelId,
-              'channelName': item.channelName,
-              'streamUrl': item.streamUrl ?? '',
-            });
+            context.go('/home/player?channelId=${item.channelId}&channelName=${item.channelName}&streamUrl=${item.streamUrl ?? ''}');
           },
         );
       },

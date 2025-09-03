@@ -1,228 +1,235 @@
-# 📺 Axion TV
+# 📺 Axion TV - React Native
 
-![Axion TV Logo](assets/images/axion_logo.png)
+Um aplicativo IPTV multiplataforma baseado no design do **9xtream.net**, desenvolvido em React Native com TypeScript.
 
-**Axion TV** é um reprodutor IPTV moderno e elegante desenvolvido em Flutter, projetado para oferecer a melhor experiência de visualização em múltiplas plataformas.
+## 🚀 Características
 
-## ✨ Características Principais
+### ✨ **Interface Moderna**
+- Design inspirado no 9xtream.net com tema escuro elegante
+- Navegação por abas intuitiva (Live, Filmes, Séries, Favoritos, Configurações)
+- Animações suaves e transições fluidas
+- Suporte a tema claro/escuro
 
-- 🎯 **Interface Adaptativa**: Design otimizado para TV e dispositivos móveis
-- 📡 **Suporte IPTV**: Playlists M3U e Xtream Codes
-- 📺 **EPG Completo**: Guia de programação eletrônica
-- 🎬 **Player Avançado**: Suporte a legendas e múltiplas faixas de áudio
-- ❤️ **Sistema de Favoritos**: Organize seus canais preferidos
-- 📱 **Multiplataforma**: Android, iOS, Android TV, Apple TV
-- 🌙 **Temas**: Modo claro e escuro
-- 🔒 **Controle Parental**: Proteção para conteúdo sensível
+### 🔐 **Autenticação e Servidores**
+- **Xtream Codes**: Suporte completo com usuário, senha e URL
+- **M3U Playlists**: Integração direta com URLs de playlists
+- Múltiplos servidores simultâneos
+- Armazenamento seguro de credenciais
 
-## 🚀 Plataformas Suportadas
+### 📺 **Conteúdo IPTV**
+- **Canais ao Vivo**: Grid responsivo com categorias
+- **Filmes**: Biblioteca completa com busca e filtros
+- **Séries**: Organização por temporadas e episódios
+- **EPG**: Guia de programação eletrônica
+- **Favoritos**: Sistema de favoritos sincronizado
+- **Histórico**: Controle de visualização
 
-- **Android** (telefones e tablets)
-- **Android TV** / **Fire TV**
-- **iOS** (iPhone e iPad)
-- **Apple TV**
+### 🔄 **Sincronização Automática**
+- Atualização automática a cada 12 horas
+- Cache inteligente para melhor performance
+- Sincronização em background
+- Notificações de atualizações
 
-## 🛠️ Tecnologias Utilizadas
+### 🎮 **Player Avançado**
+- Reprodução de streams IPTV
+- Múltiplas qualidades de vídeo
+- Controles de player completos
+- Continuar de onde parou
+- Suporte a legendas
 
-- **Flutter** 3.10+
-- **Dart** 3.0+
-- **Riverpod** para gerenciamento de estado
-- **Go Router** para navegação
-- **Hive** para armazenamento local
-- **Dio** para requisições HTTP
-- **Video Player** para reprodução de mídia
+## 🛠️ Tecnologias
 
-## 📋 Pré-requisitos
+- **React Native** 0.72+
+- **TypeScript** para type safety
+- **React Navigation** para navegação
+- **AsyncStorage** para persistência local
+- **Context API** para gerenciamento de estado
+- **Metro Bundler** para build
 
-- **Flutter SDK** (versão 3.10.0 ou superior)
-- **Dart SDK** (incluído com Flutter)
-- **Android Studio** ou **VS Code** com extensões Flutter/Dart
-- **Xcode** (para desenvolvimento iOS/macOS)
-- **Git**
+## 📱 Plataformas Suportadas
 
-## 🔧 Instalação e Configuração
+- ✅ **iOS** (iPhone/iPad)
+- ✅ **Android** (Smartphones/Tablets)
+- 🔄 **Web** (Em desenvolvimento)
+- 🔄 **Desktop** (Em desenvolvimento)
 
-### 1. Clone o repositório
+## 🚀 Como Executar
+
+### Pré-requisitos
+- Node.js 18+ ou Volta
+- React Native CLI
+- Xcode (para iOS)
+- Android Studio (para Android)
+
+### Instalação
+
+1. **Clone o repositório**
 ```bash
 git clone https://github.com/seu-usuario/axiontv.app.git
-cd axiontv.app
+cd axiontv.app/axiontv
 ```
 
-### 2. Instale as dependências
+2. **Instale as dependências**
 ```bash
-flutter pub get
+npm install
+# ou
+yarn install
 ```
 
-### 3. Execute o projeto
+3. **iOS (macOS apenas)**
 ```bash
-flutter run
+cd ios
+pod install
+cd ..
+npx react-native run-ios
 ```
 
-### 4. Para gerar código (se necessário)
+4. **Android**
 ```bash
-dart run build_runner build --delete-conflicting-outputs
+npx react-native run-android
 ```
 
-## 📱 Como Usar
-
-### Primeira Execução
-1. **Splash Screen**: Aguarde a inicialização do aplicativo
-2. **Onboarding**: Conheça os recursos principais
-3. **Login/Registro**: Crie sua conta ou faça login
-4. **Configuração**: Adicione sua playlist IPTV
-
-### Navegação Principal
-- **Canais**: Visualize todos os canais disponíveis
-- **Favoritos**: Acesse rapidamente seus canais preferidos
-- **Histórico**: Veja canais assistidos recentemente
-- **Configurações**: Personalize a experiência
-
-### Controles do Player
-- **Play/Pause**: Toque na tela ou use o botão central
-- **Navegação**: Deslize para ajustar volume e progresso
-- **Qualidade**: Selecione a resolução desejada
-- **Legendas**: Ative/desative legendas disponíveis
-
-## 🏗️ Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```
-lib/
-├── core/                    # Funcionalidades principais
-│   ├── constants/          # Constantes da aplicação
-│   ├── providers/          # Gerenciamento de estado
-│   ├── router/             # Sistema de roteamento
-│   └── theme/              # Temas e estilos
-├── features/               # Funcionalidades específicas
-│   ├── auth/               # Autenticação
-│   ├── home/               # Tela principal
-│   ├── player/             # Reprodutor de vídeo
-│   ├── favorites/          # Sistema de favoritos
-│   ├── search/             # Busca de conteúdo
-│   └── settings/           # Configurações
-└── main.dart               # Ponto de entrada
+src/
+├── components/          # Componentes reutilizáveis
+├── constants/           # Constantes da aplicação
+├── contexts/            # Contextos React (Theme, Auth)
+├── hooks/               # Custom hooks
+├── navigation/          # Configuração de navegação
+├── screens/             # Telas da aplicação
+├── services/            # Serviços (API, Storage)
+├── types/               # Definições TypeScript
+└── utils/               # Utilitários
 ```
 
-## 🔐 Configuração de Playlist IPTV
+## 🎨 Design System
 
-### Formato M3U
-```m3u
-#EXTM3U
-#EXTINF:-1 tvg-id="globo" tvg-name="Globo" tvg-logo="https://exemplo.com/globo.png",Globo
-https://exemplo.com/globo.m3u8
+### Cores
+- **Primária**: `#6366F1` (Indigo)
+- **Secundária**: `#8B5CF6` (Violet)
+- **Acento**: `#F59E0B` (Amber)
+- **Fundo**: `#0F0F23` (Azul escuro)
+
+### Tipografia
+- **H1**: 32px, Weight 800
+- **H2**: 28px, Weight 700
+- **Body**: 16px, Weight 400
+- **Caption**: 14px, Weight 400
+
+## 🔧 Configuração
+
+### Variáveis de Ambiente
+```bash
+# Crie um arquivo .env
+API_BASE_URL=https://api.axiontv.com
+DEFAULT_LOCALE=pt-BR
+AUTO_UPDATE_INTERVAL=43200000
 ```
 
-### Formato Xtream Codes
+### Configurações do App
+- Atualização automática: 12 horas
+- Cache: 200MB
+- Timeout de rede: 30 segundos
+- Qualidade padrão: Auto
+
+## 📊 Funcionalidades Principais
+
+### 🏠 **Tela Inicial**
+- Splash screen animada
+- Onboarding para novos usuários
+- Login com múltiplos tipos de servidor
+
+### 📺 **Canais ao Vivo**
+- Grid responsivo de canais
+- Categorias organizadas
+- Busca por nome
+- Favoritos rápidos
+
+### 🎬 **Filmes**
+- Biblioteca completa
+- Busca avançada
+- Filtros por categoria/ano
+- Histórico de visualização
+
+### 📺 **Séries**
+- Organização por temporadas
+- Episódios numerados
+- Progresso de visualização
+- Continuar assistindo
+
+### ⚙️ **Configurações**
+- Tema claro/escuro
+- Qualidade de vídeo
+- Atualizações automáticas
+- Controle parental
+- Acessibilidade
+
+## 🔒 Segurança
+
+- Credenciais criptografadas
+- Validação de URLs
+- Timeout de sessão
+- Controle de acesso por PIN
+
+## 📈 Performance
+
+- Lazy loading de imagens
+- Cache inteligente
+- Otimização de re-renders
+- Compressão de assets
+
+## 🧪 Testes
+
+```bash
+# Testes unitários
+npm test
+
+# Testes E2E
+npm run test:e2e
+
+# Coverage
+npm run test:coverage
 ```
-URL: http://exemplo.com:8080
-Usuário: seu_usuario
-Senha: sua_senha
-```
-
-## 🎨 Personalização
-
-### Temas
-O aplicativo suporta temas claro e escuro, com cores personalizáveis através do arquivo `lib/core/constants/app_constants.dart`.
-
-### Cores Principais
-- **Primária**: #1E88E5 (Azul)
-- **Secundária**: #1565C0 (Azul escuro)
-- **Fundo**: #121212 (Escuro) / #FFFFFF (Claro)
 
 ## 📦 Build e Deploy
 
 ### Android
 ```bash
-# APK de release
-flutter build apk --release
-
-# APK para Android TV
-flutter build apk --release --flavor tv
-
-# Bundle para Play Store
-flutter build appbundle --release
+cd android
+./gradlew assembleRelease
 ```
 
 ### iOS
 ```bash
-# Build para iOS
-flutter build ios --release
-
-# Build para Apple TV
-flutter build ios --release --dart-define=PLATFORM=apple_tv
-```
-
-## 🧪 Testes
-
-### Executar testes unitários
-```bash
-flutter test
-```
-
-### Executar testes de integração
-```bash
-flutter test integration_test/
-```
-
-## 🐛 Solução de Problemas
-
-### Problemas Comuns
-
-1. **Erro de dependências**
-   ```bash
-   flutter clean
-   flutter pub get
-   ```
-
-2. **Problemas de build**
-   ```bash
-   flutter clean
-   flutter build apk --debug
-   ```
-
-3. **Problemas de cache**
-   ```bash
-   flutter clean
-   flutter pub cache repair
-   ```
-
-### Logs de Debug
-```bash
-flutter run --verbose
+cd ios
+xcodebuild -workspace AxionTV.xcworkspace -scheme AxionTV -configuration Release
 ```
 
 ## 🤝 Contribuição
 
-1. **Fork** o projeto
-2. **Crie** uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. **Commit** suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** para a branch (`git push origin feature/AmazingFeature`)
-5. **Abra** um Pull Request
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 🙏 Agradecimentos
-
-- **Flutter Team** pelo framework incrível
-- **Comunidade Flutter** pelo suporte contínuo
-- **Contribuidores** que ajudaram a melhorar o projeto
-
-## 📞 Suporte
+## 🆘 Suporte
 
 - **Email**: suporte@axiontv.com
 - **Issues**: [GitHub Issues](https://github.com/seu-usuario/axiontv.app/issues)
-- **Documentação**: [Wiki do Projeto](https://github.com/seu-usuario/axiontv.app/wiki)
+- **Documentação**: [Wiki](https://github.com/seu-usuario/axiontv.app/wiki)
 
-## 🔄 Changelog
+## 🙏 Agradecimentos
 
-### v1.0.0 (2024-01-XX)
-- ✨ Lançamento inicial
-- 🎯 Interface adaptativa para TV e mobile
-- 📡 Suporte a playlists IPTV
-- 📺 Sistema EPG básico
-- ❤️ Sistema de favoritos
-- 🌙 Temas claro e escuro
+- Design inspirado no [9xtream.net](https://9xtream.net)
+- Comunidade React Native
+- Contribuidores do projeto
 
 ---
 

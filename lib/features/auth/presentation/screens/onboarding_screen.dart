@@ -274,7 +274,6 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
               color: Colors.white,
               fontSize: isTV ? 36 : 28,
               fontWeight: FontWeight.bold,
-              textAlign: TextAlign.center,
             ),
             textAlign: TextAlign.center,
           ),
